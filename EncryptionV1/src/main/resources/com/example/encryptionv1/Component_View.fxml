@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="411.0" prefWidth="551.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.encryptionv1.Components_Controllers">
+   <children>
+      <Button fx:id="btnExit" layoutX="430.0" layoutY="99.0" mnemonicParsing="false" onAction="#onExitButtonClick" prefHeight="26.0" prefWidth="43.0" style="-fx-background-color: RED;" text="Exit" textFill="WHITE" underline="true" />
+      <ChoiceBox id="cbxChoose" fx:id="cbxChoose" layoutX="58.0" layoutY="99.0" prefWidth="150.0" />
+      <Label fx:id="lblChooseE" layoutX="60.0" layoutY="74.0" text="Choose Encryption method:" textFill="WHITE" />
+      <TabPane layoutX="60.0" layoutY="136.0" prefHeight="233.0" prefWidth="414.0" style="-fx-background-color: GRAY;" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="tabChangePass" text="Password">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="204.0" prefWidth="414.0">
+                     <children>
+                        <Pane layoutX="16.0" layoutY="10.0" prefHeight="104.0" prefWidth="295.0" style="-fx-background-color: GRAY; -fx-border-color: white;" />
+                        <Button fx:id="btnEncryptPass" layoutX="325.0" layoutY="25.0" mnemonicParsing="false" onAction="#onEncryptButtonPassClick" prefHeight="74.0" prefWidth="80.0" text="Encrypt" />
+                        <Button fx:id="btnDecryptPass" layoutX="164.0" layoutY="154.0" mnemonicParsing="false" onAction="#onDecryptButtonPassClick" prefHeight="35.0" prefWidth="86.0" text="Decrypt" />
+                        <Label fx:id="lblKeyH" layoutX="32.0" layoutY="26.0" text="Enter Key:" textFill="WHITE" />
+                        <Label fx:id="lblPassH" layoutX="32.0" layoutY="77.0" text="Enter Password:" textFill="WHITE" />
+                        <Label fx:id="lblEncryptResult" layoutX="150.0" layoutY="125.0" style="-fx-text-fill: PURPLE;" text="[Encrypted password]" textFill="WHITE" wrapText="true">
+                           <effect>
+                              <Bloom />
+                           </effect>
+                        </Label>
+                        <Label fx:id="lblDecryptedResult" layoutX="273.0" layoutY="163.0" text="[Decrypted password]" textFill="WHITE" wrapText="true" />
+                        <TextField fx:id="txtPassKey" layoutX="142.0" layoutY="22.0" />
+                        <TextField fx:id="txtPassword" layoutX="143.0" layoutY="73.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="tabChangeFiles" onSelectionChanged="#onTabChangeFileSelection" text="Files">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Pane layoutX="13.0" layoutY="54.0" prefHeight="62.0" prefWidth="354.0" style="-fx-background-color: GRAY; -fx-border-color: white;">
+                           <children>
+                              <Label fx:id="lblKey" layoutX="39.0" layoutY="21.0" text="Enter key" textFill="WHITE" />
+                              <TextField fx:id="txtFileKey" layoutX="104.0" layoutY="19.0" />
+                              <Button fx:id="btnEncryptFile" layoutX="273.0" layoutY="14.0" mnemonicParsing="false" onAction="#onEncryptButtonFileClick" prefHeight="35.0" prefWidth="67.0" text="Encrypt" />
+                           </children>
+                        </Pane>
+                        <Button fx:id="btnBrowse" layoutX="20.0" layoutY="12.0" mnemonicParsing="false" onAction="#onBrowseButtonClick" prefHeight="35.0" prefWidth="61.0" text="Browse" />
+                        <Label fx:id="lblPath" layoutX="99.0" layoutY="21.0" text="File Path here" textFill="#fffb0d" wrapText="true" />
+                        <Button fx:id="btnDecryptFile" layoutX="171.0" layoutY="138.0" mnemonicParsing="false" onAction="#onDecryptButtonFileClick" prefHeight="43.0" prefWidth="72.0" text="Decrypt" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+      <Label layoutX="108.0" layoutY="22.0" style="-fx-text-fill: GREEN;" text="Encrypt and Decrypt Program:" textAlignment="CENTER" textFill="WHITE" underline="true">
+         <font>
+            <Font size="24.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </Label>
+   </children>
+</AnchorPane>
